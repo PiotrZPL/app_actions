@@ -1,6 +1,6 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-import 'hello_method_channel.dart';
+import 'app_actions_method_channel.dart';
 
 abstract class HelloPlatform extends PlatformInterface {
   /// Constructs a HelloPlatform.
@@ -25,5 +25,11 @@ abstract class HelloPlatform extends PlatformInterface {
 
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
+  }
+
+  Future<void> openApp({
+    required String appName
+  }) async {
+    throw UnimplementedError('openApp() has not been implemented.');
   }
 }

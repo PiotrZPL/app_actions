@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:app_actions/hello_method_channel.dart';
+import 'package:app_actions/app_actions_method_channel.dart';
 
 void main() {
   MethodChannelHello platform = MethodChannelHello();

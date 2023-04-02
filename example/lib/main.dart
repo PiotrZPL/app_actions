@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:app_actions/hello.dart';
+import 'package:app_actions/app_actions.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,8 +55,20 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('Running on: $_platformVersion\n'),
-        ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(_platformVersion),
+              ElevatedButton(
+                onPressed: () async {
+                  _helloPlugin.getPlatformVersion();
+                  await _helloPlugin.openApp(appName: "com.google.android.gm");
+                },
+                child: const Text("Press")
+              )
+            ],
+          ),
+        )
       ),
     );
   }

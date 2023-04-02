@@ -1,3 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="de.piotrlange.app_actions">
+
+  <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
 </manifest>
