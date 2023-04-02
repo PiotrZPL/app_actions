@@ -1,4 +1,4 @@
-package de.piotrlange.app_actions.hello
+package de.piotrlange.app_actions
 
 import androidx.annotation.NonNull
 
