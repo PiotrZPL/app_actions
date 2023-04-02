@@ -1,5 +1,5 @@
-name: hello
-description: A new Flutter plugin project.
+name: app_actions
+description: A Flutter package for accessing actions related to Android apps.
 version: 0.0.1
 homepage:
 
@@ -35,7 +35,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: de.piotrlange.app_actions.hello
+        package: de.piotrlange.app_actions
         pluginClass: HelloPlugin
 
   # To add assets to your plugin package, add an assets section, like this:

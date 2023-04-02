@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:hello/hello.dart';
-import 'package:hello/hello_platform_interface.dart';
-import 'package:hello/hello_method_channel.dart';
+import 'package:app_actions/hello.dart';
+import 'package:app_actions/hello_platform_interface.dart';
+import 'package:app_actions/hello_method_channel.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 class MockHelloPlatform
