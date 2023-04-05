@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:app_actions/app_actions_method_channel.dart';
 
 void main() {
-  MethodChannelHello platform = MethodChannelHello();
+  MethodChannelAppActions platform = MethodChannelAppActions();
   const MethodChannel channel = MethodChannel('hello');
 
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -16,9 +16,5 @@ void main() {
 
   tearDown(() {
     channel.setMockMethodCallHandler(null);
-  });
-
-  test('getPlatformVersion', () async {
-    expect(await platform.getPlatformVersion(), '42');
   });
 }
