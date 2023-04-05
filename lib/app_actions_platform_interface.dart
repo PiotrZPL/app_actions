@@ -10,13 +10,13 @@ abstract class AppActionsPlatform extends PlatformInterface {
 
   static AppActionsPlatform _instance = MethodChannelAppActions();
 
-  /// The default instance of [HelloPlatform] to use.
+  /// The default instance of [AppActionsPlatform] to use.
   ///
-  /// Defaults to [MethodChannelHello].
+  /// Defaults to [MethodChannelAppActions].
   static AppActionsPlatform get instance => _instance;
 
   /// Platform-specific implementations should set this with their own
-  /// platform-specific class that extends [HelloPlatform] when
+  /// platform-specific class that extends [AppActionsPlatform] when
   /// they register themselves.
   static set instance(AppActionsPlatform instance) {
     PlatformInterface.verifyToken(instance, _token);
