@@ -1,4 +1,4 @@
-group 'de.piotrlange.app_actions.hello'
+group 'de.piotrlange.app_actions'
 version '1.0-SNAPSHOT'
 
 buildscript {

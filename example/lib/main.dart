@@ -30,8 +30,8 @@ class _MyAppState extends State<MyApp> {
             children: [
               const Text("Open Gmail"),
               ElevatedButton(
-                onPressed: () async {
-                  await AppActions().openApp(appName: "com.google.android.gm");
+                onPressed: () {
+                  AppActions().openApp(appName: "com.google.android.gm");
                 },
                 child: const Text("Press")
               )
