@@ -6,12 +6,17 @@ import 'package:app_actions/app_actions_platform_interface.dart';
 import 'package:app_actions/app_actions_method_channel.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-class MockHelloPlatform
+class MockAppActionsPlatform
     with MockPlatformInterfaceMixin
     implements AppActionsPlatform {
 
   @override
   Future<void> openApp({required String appName}) => Future<void>(() {
+    
+  },);
+
+  @override
+  Future<void> openAppSettings({required String appName}) => Future<void>(() {
     
   },);
 }

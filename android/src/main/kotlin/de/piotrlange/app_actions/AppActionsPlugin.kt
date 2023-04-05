@@ -1,9 +1,12 @@
 package de.piotrlange.app_actions
 
 import androidx.annotation.NonNull
-import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.content.pm.PackageManager
 import android.content.Context
+import android.content.Intent
+import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
+import android.net.Uri
+import android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
@@ -59,12 +62,13 @@ class AppActionsPlugin: MethodCallHandler, FlutterPlugin, ActivityAware {
   override fun onDetachedFromActivity() {}
 
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
-    if (call.method == "getPlatformVersion") {
-      result.success("Android ${android.os.Build.VERSION.SDK}")
-    } 
-    else if (call.method == "openApp") {
+    if (call.method == "openApp") {
       val packageName: String? = call.argument("package_name")
       result.success(openApp(packageName))
+    }
+    else if (call.method == "openAppSettings") {
+      val packageName: String? = call.argument("package_name")
+      result.success(openAppSettings(packageName))
     }
     else {
       result.notImplemented()
@@ -80,6 +84,22 @@ class AppActionsPlugin: MethodCallHandler, FlutterPlugin, ActivityAware {
     } catch (e: Exception) {
         print(e)
         false
+    }
+  }
+
+  private fun openAppSettings(packageName: String?): Boolean {
+    if (packageName.isNullOrBlank()) return false
+    return try {
+      val intent = Intent()
+      intent.flags = FLAG_ACTIVITY_NEW_TASK
+      intent.action = ACTION_APPLICATION_DETAILS_SETTINGS
+      val uri = Uri.fromParts("package", packageName, null)
+      intent.data = uri
+      context!!.startActivity(intent)
+      true
+    } catch (e: Exception) {
+      print(e)
+      false
     }
   }
 }

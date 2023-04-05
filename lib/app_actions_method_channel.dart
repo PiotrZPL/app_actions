@@ -23,4 +23,19 @@ class MethodChannelAppActions extends AppActionsPlatform {
       throw Exception("Could not open $appName!");
     }
   }
+
+  @override
+  Future<void> openAppSettings({
+    required String appName
+  }) async {
+    bool success = await methodChannel.invokeMethod(
+      "openAppSettings",
+      {
+        "package_name": appName
+      }
+    );
+    if (!success) {
+      throw Exception("Could not open settings for $appName!");
+    }
+  }
 }

@@ -28,4 +28,10 @@ abstract class AppActionsPlatform extends PlatformInterface {
   }) async {
     throw UnimplementedError('openApp() has not been implemented.');
   }
+
+  Future<void> openAppSettings({
+    required String appName
+  }) async {
+    throw UnimplementedError('openAppSettings() has not been implemented.');
+  }
 }

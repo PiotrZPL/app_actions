@@ -34,6 +34,12 @@ class _MyAppState extends State<MyApp> {
                   AppActions().openApp(appName: "com.google.android.gm");
                 },
                 child: const Text("Press")
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  AppActions().openAppSettings(appName: "com.google.android.gm");
+                },
+                child: const Text("Open Settings")
               )
             ],
           ),

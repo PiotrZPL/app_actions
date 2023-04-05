@@ -7,4 +7,10 @@ class AppActions {
   }) {
     AppActionsPlatform.instance.openApp(appName: appName);
   }
+
+  void openAppSettings({
+    required String appName
+  }) {
+    AppActionsPlatform.instance.openAppSettings(appName: appName);
+  }
 }
